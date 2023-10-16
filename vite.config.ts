@@ -3,7 +3,6 @@ import { defineConfig } from 'vite';
 import { envSchema } from './src/common/validations/env.schema';
 
 import glsl from 'vite-plugin-glsl';
-import solidPlugin from 'vite-plugin-solid';
 
 export default defineConfig(({ mode }) => {
   envSchema.validateSync({ mode }, { strict: true });
@@ -33,11 +32,10 @@ export default defineConfig(({ mode }) => {
       rollupOptions: {
         input: {
           index: 'index.html',
-          about: 'about.html',
         },
       },
     },
-    plugins: [solidPlugin(), glsl()],
+    plugins: [glsl()],
     test: {
       setupFiles: ['./tests/unit/__setup__/setup.ts'],
       globals: true,

@@ -23,8 +23,6 @@
       "/src/*": ["src/*"],
       "/public/*": ["public/*"]
     },
-    "jsx": "react-jsx",
-    "jsxImportSource": "solid-js"
   },
   "include": ["src", "tests", "src/**/*.d.ts"],
 }
